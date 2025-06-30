@@ -6,7 +6,7 @@ import '../../global.css'
 
 export default function _layout() {
   return (
-    <SafeAreaView>
+    <SafeAreaView className=' h-full'>
         <Slot/>
     </SafeAreaView>
   )

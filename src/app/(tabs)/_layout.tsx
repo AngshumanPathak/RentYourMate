@@ -10,14 +10,9 @@ const TabIcon = ({ focused, icon, title }: any) => {
   if (focused) {
     return (
       <>
-        <LinearGradient
-          colors={["#4f46e5", "#3b82f6"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
-          className="flex flex-column justify-center items-center rounded-full p-2"
-        >
-          <Image source={icon} className="size-5" />
-        </LinearGradient>
+        
+          <Image source={icon} className="size-10" />
+       
         <Text className="text-white ml-2">{title}</Text>
       </>
     );
@@ -25,7 +20,7 @@ const TabIcon = ({ focused, icon, title }: any) => {
 
   return (
     <View className="size-full justify-center items-center mt-4 rounded-full">
-      <Image source={icon} tintColor="#A8B5DB" className="size-5" />
+      <Image source={icon} tintColor="#A8B5DB" className="size-10" />
       <Text className="text-violet-800 ml-2">{title}</Text>
     </View>
   );
@@ -45,60 +40,61 @@ const TabLayout = () => {
             height: "100%",
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 10,
+            marginTop: 18,
           },
           tabBarStyle: {
-            backgroundColor: "#101012",
-            height: 80,
-            width: "100%",
-            overflow: "hidden",
-            borderWidth: 1,
-            borderColor: "#101012",
-            paddingTop: 12,
+            backgroundColor: "#0F0D23",
+          borderRadius: 50,
+          marginHorizontal: 20,
+          marginBottom: 10,
+          height: 56,
+          position: "absolute",
+          overflow: "hidden",
+          borderWidth: 1,
+          borderColor: "#0F0D23",
           },
         }}
       >
         <Tabs.Screen
           name="index"
           options={{
-            title: "Home",
+            title: "Find",
             headerShown: false,
             tabBarIcon: ({ focused }) => (
-              <TabIcon focused={focused} icon={icons.search} title="Home" />
+              <TabIcon focused={focused} icon={icons.search}  />
             ),
           }}
         />
         <Tabs.Screen
-          name="explore"
+          name="Matches"
           options={{
-            title: "Explore",
+            title: "Matches",
             headerShown: false,
             tabBarIcon: ({ focused }) => (
-              <TabIcon focused={focused} icon={icons.match} title="Explore" />
+              <TabIcon focused={focused} icon={icons.match} />
             ),
           }}
         />
         <Tabs.Screen
-          name="circle"
+          name="TopPicks"
           options={{
-            title: "Circle",
+            title: "Rent",
             headerShown: false,
             tabBarIcon: ({ focused }) => (
-              <TabIcon focused={focused} icon={icons.rent} title="Circle" />
+              <TabIcon focused={focused} icon={icons.rent} />
             ),
           }}
         />
         <Tabs.Screen
-          name="events"
+          name="Profile"
           options={{
-            title: "Events",
+            title: "Profile",
             headerShown: false,
             tabBarIcon: ({ focused }) => (
-              <TabIcon focused={focused} icon={icons.profile} title="Events" />
+              <TabIcon focused={focused} icon={icons.profile}/>
             ),
           }}
         />
-       
         
       </Tabs>
     </>
